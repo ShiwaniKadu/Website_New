@@ -46,9 +46,8 @@ EXTERNAL_APPS = [
     'Accounts'
 
 ]
+
 INSTALLED_APPS += EXTERNAL_APPS 
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

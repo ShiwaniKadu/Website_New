@@ -6,5 +6,12 @@ class Student(models.Model):
     age=models.IntegerField()
     email=models.EmailField()
     address=models.TextField()
-    
+
+class Cars(models.Model):
+    car_name=models.CharField(max_length=500)
+    speed=models.IntegerField(default=50)
+
+    def __str__(self) -> str:
+        return self.car_name
+
     

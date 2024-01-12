@@ -21,10 +21,13 @@ from vege.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+#from . import views
 
 urlpatterns = [
-    path("", Home, name="Home"),
-    path("receipe/", receipes, name="receipes"),
+    #path("", Home, name="Home"),
+    path("", receipes, name="receipes"),
+    path("delete-receipe/<id>/", delete_receipe, name="delete_receipe"),
+
     path("contact/", contact, name="contact"),
     path("about/", about, name="about"),
     path('admin/', admin.site.urls),

@@ -28,6 +28,8 @@
             <th scope="col">Receipe Name</th>
             <th scope="col">Receipe Desc</th>
             <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,9 @@
             <td>{{receipe.receipe_description}}</td>
             <td>
               <img src="/media/{{receipe.receipe_image}}" style="height:100px">
+            </td>
+            <td>
+              <a href="/delete-receipe/{{receipe.id}}" class="btn btn-danger">Delete</button>
             </td>
           </tr>
           {% endfor %}

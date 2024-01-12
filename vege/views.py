@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import *
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -22,3 +23,9 @@ def receipes(request):
     context = {"receipes": queryset}
         
     return render(request, "receipes.html",context)
+
+def delete_receipe(request, id):
+    queryset = Receipe.objects.get(id=id)
+    queryset.delete()
+    return redirect("/")
+

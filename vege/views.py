@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
+
 
 # Create your views here.
 def receipes(request):
@@ -15,5 +16,9 @@ def receipes(request):
             receipe_name=receipe_name,
             receipe_description=receipe_description
             )
+        return redirect("/")
+    
+    queryset = Receipe.objects.all()
+    context = {"receipes": queryset}
         
-    return render(request, "receipes.html")
+    return render(request, "receipes.html",context)

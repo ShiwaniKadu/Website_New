@@ -20,6 +20,9 @@ def receipes(request):
         return redirect("/")
     
     queryset = Receipe.objects.all()
+
+    if request.GET.get("search"):
+        queryset=queryset.filter(receipe_name__icontains = request.GET.get("search"))
     context = {"receipes": queryset}
         
     return render(request, "receipes.html",context)
@@ -37,13 +40,14 @@ def update_receipe(request, id):
         receipe_image = request.FILES.get("receipe_image")
         receipe_name = data.get("receipe_name")
         receipe_description = data.get("receipe_description")
+
         queryset.receipe_name=receipe_name
         queryset.receipe_description=receipe_description  
 
         if receipe_image:
-            queryset.receipe_name=receipe_image
-        queryset.save() 
-        return redirect("/")
+            queryset.receipe_image=receipe_image
+            queryset.save() 
+            return redirect("/")
    
     context = {"receipe": queryset}
 

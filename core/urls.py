@@ -32,6 +32,10 @@ urlpatterns = [
 
     path("contact/", contact, name="contact"),
     path("about/", about, name="about"),
+    path("login/", login_page, name="login"),
+    path("register/", register, name="register"),
+
+
     path('admin/', admin.site.urls),
 ]
 

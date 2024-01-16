@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block start%}
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token%}
+        <h2>Login</h2>
+        <hr>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" aria-describedby="emailHel">
+            <div id ="emailhelp" class="from-text">We'll never share your email </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlPassword1" class="form-label">Password </label>
+            <input type="password" class="form-control" id="exampleFormControlPassword1">
+          </div>
+          <p>Don't have account <a href = "/register/">Register</a></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+{% endblock %}
+    
